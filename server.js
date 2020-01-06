@@ -38,14 +38,10 @@ app.use('/todo', require('./routes/todo'))
 let server = app.listen(process.env.PORT || 4001, () => {
     console.log('Listen At 4001')
 })
-var io = socket(server);
+let io = socket(server);
 
-// var clients = 0;
 io.on('connection', (socket) => {
-    // clients++;
-    console.log('made socket connection', socket.id);
-
-    // ADD TODO
+     // ADD TODO
     socket.on('ADD_TODO', (data) => {
         ToDo.create(data).then((data) => {
             io.sockets.emit('GET_TODO_ADD', data);
