@@ -69,25 +69,4 @@ io.on('connection', (socket) => {
             })
         })
     });
-
-    // Brodcasting 
-    // socket.emit('newclientconnect', { description: 'Hey, welcome!' });
-    // socket.broadcast.emit('newclientconnect', { description: clients + ' clients connected!' })
-    // Disconnect
-    // socket.on('disconnect', function () {
-    //     clients--;
-    //     socket.broadcast.emit('newclientconnect', { description: clients + ' clients connected!' })
-    // });
-
-
 });
-
-// let nsp = io.of('/nsp');
-
-// nsp.on('connection', (socket) => {
-
-//     nsp.emit('EMIT_IN_NSP', "Hi from new Namespace")
-//     socket.join('room1');
-//     nsp.to('room1').emit('event', { msg: "EVENT" });
-
-// })
